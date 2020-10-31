@@ -34,8 +34,8 @@ export class ListUserComponent implements OnInit {
       return;
     }
     this.apiService.getUsers()
-      .subscribe( data => {
-        this.users = data.result;
+      .subscribe( (data:any) => {
+        this.users = data
       });
     //dealing with fetching remote data.
      //this.rowData = this.http.get('https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/sample-data/smallRowData.json');

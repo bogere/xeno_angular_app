@@ -12,3 +12,7 @@
     margin:10px;
     width: 150px;
   }
+
+  .hidden-td{
+    display: none;
+  }

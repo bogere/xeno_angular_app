@@ -7,7 +7,8 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th class="hidden">Id</th>
+      <th class="hidden-td">Id</th>
+      <th>#</th>
       <th>FirstName</th>
       <th>LastName</th>
       <th>UserName</th>
@@ -16,15 +17,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users">
-      <td class="hidden">{{user.id}}</td>
+    <tr *ngFor="let user of users; let i = index">
+      <td class="hidden-td">{{user.id}}</td>
+      <td>{{ i + 1}}</td>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
       <td>{{user.username}}</td>
       <td>{{user.age}}</td>
       <td>{{user.salary}}</td>
-      <td><button class="btn btn-success" (click)="deleteUser(user)"> Delete</button>
-        <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+      <td>
+        <button class="btn btn-success" (click)="editUser(user)"> Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>
