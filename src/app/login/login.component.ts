@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.controls.password.value
     }
     this.apiService.login(loginPayload).subscribe(data => {
-      debugger;
 
       if (data.pwd === "Incorrect password provided") {
         this.invalidLogin = true;

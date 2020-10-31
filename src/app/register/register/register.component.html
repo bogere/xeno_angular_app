@@ -30,6 +30,9 @@
         </div>
         <button class="btn btn-success" [disabled]="registerForm.invalid">Register</button>
         <button class="btn btn-link" (click)= "goToLogin()">Login</button>
+        <div *ngIf="validRegister" class="success">
+          <div>Registered the Admin successful</div>
+        </div>
         <div *ngIf="invalidRegister" class="error">
           <div>Failed to register the admin</div>
         </div>

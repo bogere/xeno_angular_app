@@ -19,15 +19,20 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    debugger;
+
     const registerPayload = {
-      username: this.registerForm.controls.username.value ,
-      password: this.registerForm.controls.password.value
+      firstName: this.registerForm.controls.firstName.value,
+      lastName: this.registerForm.controls.lastName.value,
+      username: this.registerForm.controls.username.value,
+      email: this.registerForm.controls.email.value,
+      password: this.registerForm.controls.password.value,
+      userType: this.registerForm.controls.userType.value,
+      updatedBy: this.registerForm.controls.updatedBy.value,
+      createdBy: this.registerForm.controls.createdBy.value
     }
-    this.apiService.createUser(registerPayload).subscribe(data => {
+    this.apiService.createUser(registerPayload).subscribe((data:any) => {
       debugger;
-      if(data.status === 201) {
-        //this.router.navigate(['login']);
+      if(data.success === true) {
         this.validRegister = true;
       }else {
         this.invalidRegister = true;
