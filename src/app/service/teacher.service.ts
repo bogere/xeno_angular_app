@@ -21,7 +21,7 @@ export class TeacherService {
     return this.http.get<ApiResponse>(this.baseUrl + id);
   }
 
-  createTeacher(teacher: Teacher): Observable<ApiResponse> {
+  createTeacher(teacher: any): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(this.baseUrl, teacher);
   }
 
