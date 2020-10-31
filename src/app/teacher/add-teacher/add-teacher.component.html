@@ -1,0 +1,53 @@
+
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-6 user-container">
+        <h2 class="text-center">Add Teacher</h2>
+        <form [formGroup]="addTeacherForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+             <label for="firstName">First Name:</label>
+             <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+          </div>
+
+          <div class="form-group">
+             <label for="email">Email:</label>
+             <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+          </div>
+  
+          <div class="form-group">
+             <label for="password">Password:</label>
+             <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+          </div>
+
+          <div class="form-group">
+             <label for="username">User Name:</label>
+             <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+          </div>
+  
+          <div class="form-group">
+             <label for="contact">Contact:</label>
+             <input type="number" formControlName="contact" placeholder="contact" name="contact" class="form-control" id="contact">
+          </div>
+          <div class="form-group">
+            <label for="contact">Joined Date:</label>
+            <input type="date" formControlName="joinedDate" placeholder="Joined Date" name="joinedDate" class="form-control" id="joinedDate">
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" formControlName="address" placeholder="Enter address" name="address" class="form-control" id="address">
+         </div>
+
+      <button  class="btn btn-success" [disabled]="addTeacherForm.invalid">Add Teacher </button>
+    </form>
+    
+  </div>
+
+</div>
+
+</div>
+  

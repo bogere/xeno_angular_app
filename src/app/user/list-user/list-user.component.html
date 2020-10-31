@@ -1,0 +1,41 @@
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto"> Learnx School Mgt</h2>
+  <div class = "row">
+    <button class="btn btn-success add-user-button" (click)="addStudent()"> Register Student</button>
+    <button class="btn btn-success add-user-button" (click)="addTeacher()"> Register Teacher</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>UserName</th>
+      <th>Age</th>
+      <th>Salary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td class="hidden">{{user.id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.age}}</td>
+      <td>{{user.salary}}</td>
+      <td><button class="btn btn-success" (click)="deleteUser(user)"> Delete</button>
+        <button class="btn btn-success" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+  <button (click)="getSelectedRows()">Get Selected Rows</button>
+  <ag-grid-angular
+    #agGrid
+    style="width: 500px; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+  >
+</ag-grid-angular>  
+</div>

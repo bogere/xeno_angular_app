@@ -1,0 +1,39 @@
+<div class="row">
+
+    <div class="col-md-6 login-container">
+      <h2 style="margin: auto">Register Admin </h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">FirstName:</label>
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['firstName'].hasError('required') && registerForm.controls['firstName'].touched">FirstName is required</div>
+        </div>
+        <div class="form-group">
+          <label for="username">LastName:</label>
+          <input type="text" class="form-control" formControlName="lastName" id="lastName" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['lastName'].hasError('required') && registerForm.controls['lastName'].touched">LastName is required</div>
+        </div>
+        <div class="form-group">
+          <label for="username">Email:</label>
+          <input type="email" class="form-control" formControlName="email" id="email" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched">Email address is required</div>
+        </div>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" formControlName="username" id="username" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['username'].hasError('required') && registerForm.controls['username'].touched">username is required</div>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" formControlName="password" id="pwd" autocomplete="off">
+          <div class="error" *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched">Password is required</div>
+        </div>
+        <button class="btn btn-success" [disabled]="registerForm.invalid">Register</button>
+        <button class="btn btn-link" (click)= "goToLogin()">Login</button>
+        <div *ngIf="invalidRegister" class="error">
+          <div>Failed to register the admin</div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

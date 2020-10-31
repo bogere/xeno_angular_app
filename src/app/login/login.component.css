@@ -1,0 +1,22 @@
+.error{
+  color: #FF0000;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  margin: 2em auto auto;
+}
+
+a:link {
+  color: orange;
+  text-decoration: underline;
+}
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+a:active {
+  color: green;
+  text-decoration: underline;
+}
