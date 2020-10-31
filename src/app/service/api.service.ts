@@ -8,7 +8,7 @@ import {ApiResponse} from "../model/api.response";
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  userUrl: string = 'http://localhost:8080/users/';
+  userUrl: string = ' http://localhost:8080/api/v1/users/';
   authUrl: string = 'http://localhost:8080/auth';
 
   login(loginPayload) : Observable<any> {

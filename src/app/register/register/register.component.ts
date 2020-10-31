@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
       createdBy: this.registerForm.controls.createdBy.value
     }
     this.apiService.createUser(registerPayload).subscribe((data:any) => {
-      debugger;
       if(data.success === true) {
         this.validRegister = true;
       }else {

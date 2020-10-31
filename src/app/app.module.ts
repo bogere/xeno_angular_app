@@ -17,6 +17,7 @@ import {TokenInterceptor} from "./core/interceptor";
 import { AddStudentComponent } from './student/add-student/add-student.component';
 import { AddTeacherComponent } from './teacher/add-teacher/add-teacher.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ListTeacherComponent } from './teacher/list-teacher/list-teacher.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './shared/header/header.component';
     RegisterComponent,
     AddStudentComponent,
     AddTeacherComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListTeacherComponent
   ],
   imports: [
     BrowserModule,

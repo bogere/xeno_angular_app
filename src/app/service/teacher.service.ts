@@ -11,7 +11,7 @@ export class TeacherService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl: string = 'http://localhost:8080/teachers';
+  baseUrl: string = 'http://localhost:8080/api/v1/teachers/';
 
   getTeachers() : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl);

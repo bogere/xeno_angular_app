@@ -21,15 +21,15 @@ export class AddTeacherComponent implements OnInit {
 
   ngOnInit() {
     this.addTeacherForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      address: ['', Validators.required],
+      username: ['', [Validators.required, Validators.pattern('(^[A-z]).*')]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.pattern('(^[A-z]).*')]],
+      lastName: ['', [Validators.required, Validators.pattern('(^[A-z]).*')]],
+      address: ['', [Validators.required]],
       //gender: ['', Validators.required],
-      contact: ['', Validators.required],
-      joinedDate: ['', Validators.required],
+      contact: ['', [Validators.required]],
+      joinedDate: ['', [Validators.required]],
     });
   }
 
@@ -40,22 +40,36 @@ export class AddTeacherComponent implements OnInit {
       }
       
       const _teacherForm = this.addTeacherForm.value;
-      debugger;
       let teacherObject = {
-         userId: "",
+         userId: "1",
          address: _teacherForm.address,
          contact: _teacherForm.contact,
-         joinedDate: _teacherForm.joinedDate
+         //joinedDate: _teacherForm.joinedDate,
+         createdBy: "admin",
+         updatedBy: "admin",
+         gender: "male"
+      }
+      let teacherUser = {
+        username: _teacherForm.username,
+        email: _teacherForm.email,
+        firstName: _teacherForm.firstName,
+        lastName: _teacherForm.lastName,
+        password: _teacherForm.password,
+        userType: "teacher",
+        createdBy: "admin",
+        updatedBy: "admin"
       }
 
     //first create the user before u create teacher (respect data entity organisation)
-      self.userApiService.createUser(this.addTeacherForm.value)
-        .subscribe( newUser =>{
+      //self.userApiService.createUser(teacherUser)
+        //.subscribe( (newUser:any) =>{
+          //debugger;
           self.teacherApiService.createTeacher(teacherObject)
               .subscribe( data => {
-                self.router.navigate(['list-user']);
+                debugger;
+                self.router.navigate(['list-teacher']);
           });  
-        })
+        //})
   }
 
 }
