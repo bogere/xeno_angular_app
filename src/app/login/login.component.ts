@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       }
       if(data.token !== "No token generated") {
         window.localStorage.setItem('token', data.token);
-        this.router.navigate(['list-user']);
+        this.router.navigate(['list-teacher']);
       }
       
     });
