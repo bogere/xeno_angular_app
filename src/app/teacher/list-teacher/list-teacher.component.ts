@@ -32,9 +32,10 @@ export class ListTeacherComponent implements OnInit {
   };
 
   editTeacher(teacher: Teacher): void {
-    window.localStorage.removeItem("editTeacherId");
-    window.localStorage.setItem("editTeacherId", teacher.id.toString());
-    this.router.navigate(['edit-teacher']);
+    //window.localStorage.removeItem("editTeacherId");
+    //window.localStorage.setItem("editTeacherId", teacher.id.toString());
+    //this.router.navigate(['edit-teacher']);
+    this.router.navigateByUrl('/edit-teacher', {state: teacher});
   };
 
   addTeacher(): void {

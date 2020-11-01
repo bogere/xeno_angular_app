@@ -18,6 +18,7 @@ import { AddStudentComponent } from './student/add-student/add-student.component
 import { AddTeacherComponent } from './teacher/add-teacher/add-teacher.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ListTeacherComponent } from './teacher/list-teacher/list-teacher.component';
+import { EditTeacherComponent } from './teacher/edit-teacher/edit-teacher.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ListTeacherComponent } from './teacher/list-teacher/list-teacher.compon
     AddStudentComponent,
     AddTeacherComponent,
     HeaderComponent,
-    ListTeacherComponent
+    ListTeacherComponent,
+    EditTeacherComponent
   ],
   imports: [
     BrowserModule,
