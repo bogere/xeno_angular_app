@@ -61,15 +61,14 @@ export class AddTeacherComponent implements OnInit {
       }
 
     //first create the user before u create teacher (respect data entity organisation)
-      //self.userApiService.createUser(teacherUser)
-        //.subscribe( (newUser:any) =>{
-          //debugger;
+      self.userApiService.createUser(teacherUser)
+         .subscribe( (newUser:any) =>{
+           teacherObject.userId = newUser.id;
           self.teacherApiService.createTeacher(teacherObject)
               .subscribe( data => {
-                debugger;
                 self.router.navigate(['list-teacher']);
           });  
-        //})
+        })
   }
 
 }

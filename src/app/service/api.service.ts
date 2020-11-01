@@ -25,6 +25,10 @@ export class ApiService {
     )
   }
 
+  registerUser(registerPayload): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.authUrl + '/createUser', registerPayload);
+  }
+
   getUsers() : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.userUrl);
   }
@@ -32,9 +36,10 @@ export class ApiService {
   getUserById(id: number): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.userUrl + id);
   }
-
-  createUser(registerPayload): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.authUrl + '/createUser', registerPayload);
+   
+  //create user first before student or teacher
+  createUser(userPayload): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.userUrl, userPayload);
   }
 
   updateUser(user: User): Observable<ApiResponse> {

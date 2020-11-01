@@ -6,7 +6,8 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th class="hidden">Id</th>
+        <th class="hidden-td">Id</th>
+        <th>#</th>
         <th>FirstName</th>
         <th>LastName</th>
         <th>Username</th>
@@ -16,8 +17,9 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let teacher of teachers">
-        <td class="hidden">{{teacher.id}}</td>
+      <tr *ngFor="let teacher of teachers; let i = index">
+        <td class="hidden-td">{{teacher.id}}</td>
+        <td>{{i+1}}</td>
         <td>{{teacher.firstName}}</td>
         <td>{{teacher.lastName}}</td>
         <td>{{teacher.username}}</td>

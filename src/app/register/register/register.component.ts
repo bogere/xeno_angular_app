@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       updatedBy: this.registerForm.controls.updatedBy.value,
       createdBy: this.registerForm.controls.createdBy.value
     }
-    this.apiService.createUser(registerPayload).subscribe((data:any) => {
+    this.apiService.registerUser(registerPayload).subscribe((data:any) => {
       if(data.success === true) {
         this.validRegister = true;
       }else {
