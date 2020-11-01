@@ -21,13 +21,7 @@ export class EditTeacherComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    /*let teacherId = window.localStorage.getItem("editTeacherId");
-    if(!teacherId) {
-      alert("Invalid action.")
-      this.router.navigate(['list-teacher']);
-      return;
-    }*/
+    
     const teacherDetails = history.state;
 
     this.editForm = this.formBuilder.group({

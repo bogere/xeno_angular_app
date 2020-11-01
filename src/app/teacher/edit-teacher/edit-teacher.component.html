@@ -6,20 +6,17 @@
           <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                <label for="firstName">First Name:</label>
-               <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
-               <div class="error" *ngIf="editForm.controls['firstName'].hasError('required') && editForm.controls['firstName'].touched">FirstName is required</div>
+               <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" [readOnly] = "true">
             </div>
     
             <div class="form-group">
               <label for="lastName">Last Name:</label>
-              <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
-              <div class="error" *ngIf="editForm.controls['lastName'].hasError('required') && editForm.controls['lastName'].touched">LastName is required</div>
+              <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName" [readOnly] = "true">
             </div>
   
             <div class="form-group">
                <label for="email">Email:</label>
-               <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
-               <div class="error" *ngIf="editForm.controls['email'].hasError('required') && editForm.controls['email'].touched">Valid email is required</div>
+               <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email" [readOnly] = "true">
             </div>
     
             <div class="form-group">
@@ -30,8 +27,7 @@
   
             <div class="form-group">
                <label for="username">User Name:</label>
-               <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
-               <div class="error" *ngIf="editForm.controls['username'].hasError('required') && editForm.controls['username'].touched">UserName is required</div>
+               <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username" [readOnly]= "true">
             </div>
     
             <div class="form-group">
