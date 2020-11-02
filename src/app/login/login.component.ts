@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import { AuthService } from "../service/auth/auth.service";
 import {ApiService} from "../service/api.service";
 
 @Component({
@@ -12,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   invalidLogin: boolean = false;
-  constructor(private formBuilder: FormBuilder, private router: Router, private apiService: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router,
+     private apiService: ApiService, private authService: AuthService
+     ) { }
 
   onSubmit() {
     if (this.loginForm.invalid) {
@@ -35,7 +38,8 @@ export class LoginComponent implements OnInit {
       }
       if(data.token !== "No token generated") {
         window.localStorage.setItem('token', data.token);
-        this.router.navigate(['list-teacher']);
+        //this.router.navigate(['list-teacher']);
+         this.authService.activateLoggedIn();
       }
       
     });

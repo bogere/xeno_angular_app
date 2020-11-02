@@ -4,27 +4,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div *ngIf = "isLoggedIn" class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div *ngIf = "isLoggedIn$ | async as isLoggedIn" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink = "/list-teacher">Teachers <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" routerLink = "/list-student">Students</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li class = "nav-item">
+          <a class="nav-link" routerLink = "/list-teacher">Subjects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Logout</a>
+          <a class="nav-link" href="#" (click) = "logoutUser()">Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

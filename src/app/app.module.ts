@@ -11,6 +11,7 @@ import { AddUserComponent } from './user/add-user/add-user.component';
 import { EditUserComponent } from './user/edit-user/edit-user.component';
 import {routing} from "./app.routing";
 import {ReactiveFormsModule} from "@angular/forms";
+import { AuthService} from "./service/auth/auth.service";
 import {ApiService} from "./service/api.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./core/interceptor";
@@ -43,7 +44,7 @@ import { ListStudentComponent } from './student/list-student/list-student.compon
     HttpClientModule,
     AgGridModule.withComponents([])//for the grid to be able to use Angular components as cells / headers
   ],
-  providers: [ApiService, {provide: HTTP_INTERCEPTORS,
+  providers: [ApiService,AuthService, {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi : true}],
   bootstrap: [AppComponent]
