@@ -1,0 +1,40 @@
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto">Student</h2>
+    <button class="btn btn-success add-user-button" (click)="addTeacher()"> 
+       Register Student
+    </button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden-td">Id</th>
+        <th>#</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Guradian</th>
+        <th>Contact</th>
+        <th>Addresss</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let student of students; let i = index">
+        <td class="hidden-td">{{student.id}}</td>
+        <td>{{i+1}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.username}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.contact}}</td>
+        <td>{{student.address}}</td>
+        <td>
+          <button class="btn btn-success" (click)="editStudent(student)"> Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteStudent(student)"> Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
