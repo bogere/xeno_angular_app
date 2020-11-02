@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ApiService} from "../../service/api.service";
-import {TeacherService} from "../../service/teacher.service";
+import {StudentService} from "../../service/student.service";
 
 @Component({
   selector: 'app-add-student',
@@ -15,7 +15,7 @@ export class AddStudentComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,private router: Router, 
-    private teacherApiService: TeacherService,
+    private studentApiService: StudentService,
     private userApiService: ApiService
   ) { }
 
@@ -69,7 +69,7 @@ export class AddStudentComponent implements OnInit {
     self.userApiService.createUser(studentUser)
        .subscribe( (newUser:any) =>{
          studentObject.userId = newUser.id;
-        self.teacherApiService.createTeacher(studentObject)
+        self.studentApiService.createStudent(studentObject)
             .subscribe( data => {
               self.router.navigate(['list-student']);
         });  
