@@ -21,7 +21,7 @@ export class EditTeacherComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
     const teacherDetails = history.state;
 
     this.editForm = this.formBuilder.group({
@@ -36,6 +36,8 @@ export class EditTeacherComponent implements OnInit {
       contact: ['', [Validators.required]],
       joinedDate: ['', [Validators.required]],
     });
+
+    debugger;
     
     //initialise the editable values.
     this.editForm.setValue(teacherDetails)
